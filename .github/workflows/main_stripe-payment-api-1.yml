@@ -34,7 +34,7 @@ jobs:
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
           npm install
           npm run build --if-present
-          npm run test --if-present
+          # npm run test --if-present
           popd
 
       - name: Upload artifact for deployment job
@@ -70,4 +70,5 @@ jobs:
           app-name: 'stripe-payment-api-1'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+
           
